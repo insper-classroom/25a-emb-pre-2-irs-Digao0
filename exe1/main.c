@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 const int BTN_PIN_R = 28;
-volatile char up;
-volatile char down;
+volatile int up;
+volatile int down;
 
 void btn_callback(uint gpio, uint32_t events) {
   if (events == 0x4) { // fall edge // teste
@@ -27,7 +27,7 @@ int main() {
   while (true) {
 
     if (up){
-      printf("falll \n");
+      printf("fall \n");
       up = 0;
     }
     if (down){
